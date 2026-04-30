@@ -1,0 +1,28 @@
+void main(){
+  
+  String name = "Abubakar";
+  String uniname = "KU";
+  int age = 33;
+  
+  print("Name of the Groom is ${name}");
+  print("Name of university is ${uniname}");
+if (age>=18 ){
+  
+  print("You are ready for a marraige");
+}
+  else if (age<=18){
+    print("You are a boy");
+  }
+  
+  else if (age<10){
+    print('you are a kid');
+  }
+  else if (age>30){
+    print("Do marrainge fast");
+  }
+  else {
+    print("No result found");
+  }
+  
+  
+}
