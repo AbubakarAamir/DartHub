@@ -1,0 +1,182 @@
+void main (){
+
+  
+  
+  List<Student> students = [
+
+   Student(
+    name: "Ali",
+    fathername: "Khan",
+    semester: 3,
+    gpa: 3.6,
+    rol: 101,
+    subjects: Subjects(pf: 80, pst: 70, urdu: 60, isl: 65, calculus: 90, physics: 85)
+  ),
+
+  Student(
+    name: "Sara",
+    fathername: "Aqib",
+    semester: 2,
+    gpa: 2.0,
+    rol: 102,
+    subjects: Subjects(pf: 30, pst: 40, urdu: 35, isl: 30, calculus: 20, physics: 25)
+  ),
+
+  Student(
+    name: "Ahmed",
+    fathername: "Zain",
+    semester: 5,
+    gpa: 3.9,
+    rol: 103,
+    subjects: Subjects(pf: 90, pst: 85, urdu: 80, isl: 75, calculus: 95, physics: 92)
+  ),
+
+  Student(
+    name: "Hassan",
+    fathername: "Rashid",
+    semester: 4,
+    gpa: 2.8,
+    rol: 104,
+    subjects: Subjects(pf: 55, pst: 60, urdu: 65, isl: 70, calculus: 58, physics: 62)
+  ),
+
+  Student(
+    name: "Fatima",
+    fathername: "Imran",
+    semester: 1,
+    gpa: 3.7,
+    rol: 105,
+    subjects: Subjects(pf: 88, pst: 92, urdu: 85, isl: 80, calculus: 90, physics: 87)
+  ),
+
+  Student(
+    name: "Usman",
+    fathername: "Tariq",
+    semester: 6,
+    gpa: 1.9,
+    rol: 106,
+    subjects: Subjects(pf: 25, pst: 30, urdu: 40, isl: 35, calculus: 20, physics: 28)
+  ),
+
+  Student(
+    name: "Ayesha",
+    fathername: "Nadeem",
+    semester: 3,
+    gpa: 3.2,
+    rol: 107,
+    subjects: Subjects(pf: 70, pst: 75, urdu: 72, isl: 68, calculus: 78, physics: 74)
+  ),
+
+  Student(
+    name: "Bilal",
+    fathername: "Shahid",
+    semester: 2,
+    gpa: 2.3,
+    rol: 108,
+    subjects: Subjects(pf: 40, pst: 45, urdu: 50, isl: 42, calculus: 38, physics: 41)
+  ),
+
+  Student(
+    name: "Zara",
+    fathername: "Farooq",
+    semester: 5,
+    gpa: 3.8,
+    rol: 109,
+    subjects: Subjects(pf: 85, pst: 88, urdu: 90, isl: 87, calculus: 92, physics: 89)
+  ),
+
+  Student(
+    name: "Hamza",
+    fathername: "Aslam",
+    semester: 4,
+    gpa: 2.1,
+    rol: 110,
+    subjects: Subjects(pf: 35, pst: 55, urdu: 60, isl: 45, calculus: 30, physics: 50)
+  ),
+
+
+
+  ];
+
+  int totalMarks = 600;
+
+  // forEach loop
+  students.forEach((e) {
+
+    int obtain = e.subjects.pf +
+        e.subjects.pst +
+        e.subjects.urdu +
+        e.subjects.isl +
+        e.subjects.calculus +
+        e.subjects.physics;
+
+    double percentage = (obtain / totalMarks) * 100;
+
+    // ✅ TOPPER
+    if (e.gpa >= 3.5 && percentage >= 80) {
+      print("🔥 TOPPER STUDENT 🔥");
+      print("Name: ${e.name}");
+      print("GPA: ${e.gpa}");
+      print("Percentage: $percentage");
+      print("--------------------------");
+    }
+
+    // ❌ FAIL
+    else if (
+        e.subjects.pf < 40 ||
+        e.subjects.pst < 40 ||
+        e.subjects.urdu < 40 ||
+        e.subjects.isl < 40 ||
+        e.subjects.calculus < 40 ||
+        e.subjects.physics < 40) {
+
+      print("❌ FAIL STUDENT ❌");
+      print("Name: ${e.name}");
+      print("Percentage: $percentage");
+      print("--------------------------");
+    }
+
+  });
+
+}
+
+  
+  
+
+
+class Subjects {
+  int pf;
+  int physics;
+  int pst;
+  int urdu;
+  int isl;
+  int calculus;
+
+  Subjects({
+    required this.pf,
+    required this.physics,
+    required this.pst,
+    required this.urdu,
+    required this.isl,
+    required this.calculus
+  });
+}
+
+
+class Student {
+  String name;
+  String fathername;
+  int semester;
+  int rol;
+  double gpa;
+  Subjects subjects;
+
+  Student({
+    required this.name,
+    required this.fathername,
+    required this.semester,
+    required this.gpa,
+    required this.subjects,
+    required this.rol
+  });
+}
