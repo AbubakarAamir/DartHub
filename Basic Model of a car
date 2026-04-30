@@ -1,0 +1,47 @@
+void main(){
+  
+  List <carDetails> cardata = [
+    carDetails(name:"mira",model:"Toyata",color:"black",seats:4),
+    carDetails(name:"prius",model:"Toyata",color:"Grey",seats:2),
+    carDetails(name:"alto",model:"suzuki",color:"white",seats:1),
+    carDetails(name:"parado",model:"toyata",color:"green",seats:3),   carDetails(name:"landrover",model:"Toyata",color:"yellow",seats:6),
+    carDetails(name:"quantum",model:"pixel",color:"blue",seats:7),
+    carDetails(name:"AudiA5",model:"Audi",color:"black",seats:2),
+    carDetails(name:"mercedes",model:"benz",color:"black",seats:4),
+  ];
+               
+
+  
+  cardata.forEach((e){
+    
+    print("Here we print all the Names of the cars ${e.name} ");
+    
+    
+    print("***************************************************");
+    
+    
+    
+    print("Here we print all the Models of the cars ${e.model} ");
+    
+    
+    print("****************************************************");
+    
+    print("Here we print all the Colors of the cars ${e.color}");
+    
+    print("***************************************************");
+    
+    print("Here we print all the Seats of the cars ${e.seats}");
+  });
+
+
+}
+
+
+class carDetails{
+  String name;
+  String model;
+  String? color;
+  int?seats;
+  
+  carDetails({required this.name,required this.model, this.color,this.seats});
+}
