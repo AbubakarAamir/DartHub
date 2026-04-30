@@ -1,0 +1,10 @@
+void min(){
+  
+  String name = "Abubakar Aamir"; 
+  int age = 21;
+   double pi = 2.221;
+
+  
+  print("Name is ${name}");
+  print("Age is ${age}");
+}
