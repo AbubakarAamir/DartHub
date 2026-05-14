@@ -1,0 +1,43 @@
+// Shopping cart mein products ki list
+class Product {
+  String name;
+  int price;
+  int quantity;
+  
+  Product({required this.name, required this.price, required this.quantity});
+  
+  int getTotalPrice() {
+    return price * quantity;
+  }
+}
+
+void main() {
+  List<Product> cart = [
+    Product(name: "Shirt", price: 1500, quantity: 2),
+    Product(name: "Jeans", price: 2500, quantity: 1),
+    Product(name: "Shoes", price: 4000, quantity: 1),
+    Product(name: "Cap", price: 500, quantity: 3),
+  ];
+  
+  int totalBill = 0;
+  
+  print("===== MY SHOPPING CART =====");
+  for (var item in cart) {
+    int itemTotal = item.getTotalPrice();
+    totalBill += itemTotal;
+    print("${item.name} x ${item.quantity} = Rs.$itemTotal");
+  }
+  
+  print("Total Bill: Rs.$totalBill");
+  
+  // Discount apply karna
+  if (totalBill > 5000) {
+    int discount = totalBill * 10 ~/ 100; // 10% discount
+    int finalBill = totalBill - discount;
+    print("Congratulations! You got 10% discount: -Rs.$discount");
+    print("Final Bill: Rs.$finalBill");
+  } else {
+    print("Add more items for discount");
+  }
+}
+
