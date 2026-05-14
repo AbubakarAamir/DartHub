@@ -1,0 +1,35 @@
+
+// Parking Slot mein cars ko park karna
+class ParkedCar {
+  String carName;
+  String slotNumber;
+  
+  ParkedCar(this.carName, this.slotNumber);
+}
+
+void main() {
+  List<List<ParkedCar>> parkingFloors = [
+    [ParkedCar("mira", "D1"), ParkedCar("core", "D2"), ParkedCar("indus", "D3")],
+    [ParkedCar("Prius", "A1"), ParkedCar("Civic", "A2"), ParkedCar("Corolla", "A3")],
+    [ParkedCar("Mehran", "B1"), ParkedCar("Cultus", "B2")],
+    [ParkedCar("Fortuner", "C1"), ParkedCar("Land Cruiser", "C2"), ParkedCar("Prado", "C3")],
+  ];
+  
+  print("===== PARKING LOT INVENTORY =====");
+  
+  for (int floor = 0; floor < parkingFloors.length; floor++) {
+    print("Floor ${floor + 1}:");
+    
+    for (var car in parkingFloors[floor]) {
+      print("  Slot ${car.slotNumber}: ${car.carName}");
+    }
+  }
+  
+  // Total cars count
+  int totalCars = 0;
+  for (var floor in parkingFloors) {
+    totalCars += floor.length;
+  }
+  print("\nTotal parked cars: $totalCars");
+}
+
