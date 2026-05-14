@@ -1,0 +1,33 @@
+
+// Function use karke grade dena
+String calculateGrade(int marks) {
+  if (marks >= 90) {
+    return "A+";
+  } else if (marks >= 80) {
+    return "A";
+  } else if (marks >= 70) {
+    return "B";
+  } else if (marks >= 60) {
+    return "C";
+  } else if (marks >= 50) {
+    return "D";
+  } else {
+    return "F";
+  }
+}
+
+void main() {
+  List<int> studentMarks = [95, 72, 48, 88, 63, 91, 55, 67];
+  
+  print("===== GRADE CARD =====");
+  for (int i = 0; i < studentMarks.length; i++) {
+    String grade = calculateGrade(studentMarks[i]);
+    print("Student ${i+1}: ${studentMarks[i]} marks = Grade $grade");
+    
+    if (grade == "F") {
+      print("  ⚠️ This student needs improvement!");
+    } else if (grade == "A+") {
+      print("  🏆 Excellent performance!");
+    }
+  }
+}
