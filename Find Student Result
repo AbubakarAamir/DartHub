@@ -1,0 +1,41 @@
+
+
+class Student {
+  String name;
+  int rollno;
+  int marks;
+
+  Student({required this.name, required this.rollno, required this.marks});
+}
+
+void main() {
+  List<Student> students = [
+    Student(name: "Ali", rollno: 101, marks: 85),
+    Student(name: "Ahmed", rollno: 102, marks: 42),
+    Student(name: "Abubakar", rollno: 103, marks: 95),
+    Student(name: "Fatima", rollno: 104, marks: 88),
+    Student(name: "sara", rollno: 105, marks: 33),
+  ];
+
+  int Toppermarks = 0;
+  String Toppername = " ";
+  
+  print("***************Results***********************");
+  
+  for(var student in students){
+    if(student.marks>=50){
+      print("Name : ${student.name} (Roll No : ${student.rollno} Pass with ${student.marks})");
+    }
+    
+    else {
+      print("Name : ${student.name} (Roll No : ${student.rollno} Fail with ${student.marks})");
+    }
+    if(student.marks>Toppermarks ){
+      Toppermarks = student.marks;
+      Toppername = student.name;
+    }
+    
+  }
+  print("Topper Name is ${Toppername}");
+  print("Topper marks is ${Toppermarks}");
+}
